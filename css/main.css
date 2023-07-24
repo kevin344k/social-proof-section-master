@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: hsl(0, 0%, 100%);
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  padding: 70px 30px;
+  gap: 30px;
+  min-width: 300px;
+  max-width: 500px;
+  margin: auto;
+  position: relative;
+}
+body main section {
+  display: flex;
+  flex-direction: column;
+}
+body main .sectio--user-love-products h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  font-family: "League Spartan", sans-serif;
+  color: hsl(300, 43%, 22%);
+  text-align: center;
+  margin-bottom: 20px;
+}
+body main .sectio--user-love-products p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: "League Spartan", sans-serif;
+  color: hsl(300, 43%, 22%);
+  text-align: center;
+  line-height: 25px;
+}
+body main .section--rated {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+body main .section--rated div {
+  background-color: hsl(300, 24%, 96%);
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: "League Spartan", sans-serif;
+  color: hsl(300, 43%, 22%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  padding: 20px 0px;
+}
+body main .section--rated div span {
+  display: block;
+  width: 100px;
+  height: 15px;
+  background-image: url("../images/icon-star.svg");
+  background-position: center;
+  background-repeat: space;
+}
+body main .section--user-comments {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+body main .section--user-comments div {
+  background-color: hsl(300, 43%, 22%);
+  width: 100%;
+  padding: 30px;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: "League Spartan", sans-serif;
+  color: hsl(0, 0%, 100%);
+  line-height: 20px;
+}
+body main .section--user-comments div .ico-user1, body main .section--user-comments div .ico-user3, body main .section--user-comments div .ico-user2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 20px;
+  padding: 0px;
+  margin-bottom: 10px;
+}
+body main .section--user-comments div .ico-user1 span:nth-child(1), body main .section--user-comments div .ico-user3 span:nth-child(1), body main .section--user-comments div .ico-user2 span:nth-child(1) {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-image: url("../images/image-colton.jpg");
+  background-position: center;
+  background-repeat: space;
+  background-size: contain;
+  border-radius: 50%;
+}
+body main .section--user-comments div .ico-user1 p, body main .section--user-comments div .ico-user3 p, body main .section--user-comments div .ico-user2 p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: "League Spartan", sans-serif;
+  color: hsl(0, 0%, 100%);
+}
+body main .section--user-comments div .ico-user1 p span, body main .section--user-comments div .ico-user3 p span, body main .section--user-comments div .ico-user2 p span {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "League Spartan", sans-serif;
+  color: hsl(333, 80%, 67%);
+  margin-top: 0px;
+}
+body main .section--user-comments div .ico-user2 span:nth-child(1) {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-image: url("../images/image-irene.jpg");
+  background-position: center;
+  background-repeat: space;
+  background-size: contain;
+  border-radius: 50%;
+}
+body main .section--user-comments div .ico-user3 span:nth-child(1) {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-image: url("../images/image-anne.jpg");
+  background-position: center;
+  background-repeat: space;
+  background-size: contain;
+  border-radius: 50%;
+}
+body main .div--pattern-up {
+  display: block;
+  width: 70%;
+  height: 150px;
+  background-image: url("../images/bg-pattern-top-mobile.svg");
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+body main .div--pattern-dow {
+  display: block;
+  width: 40%;
+  height: 150px;
+  background-image: url("../images/bg-pattern-bottom-mobile.svg");
+  background-position: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+@media (min-width: 1440px) {
+  html {
+    font-size: 120%;
+  }
+  body main {
+    max-width: none;
+    width: 95%;
+    padding: 100px 150px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: auto;
+    gap: 80px 30px;
+  }
+  body main .sectio--user-love-products {
+    width: 80%;
+  }
+  body main .sectio--user-love-products h1 {
+    text-align: left;
+    width: 500px;
+  }
+  body main .sectio--user-love-products p {
+    text-align: left;
+    font-size: 1.3rem;
+    line-height: 30px;
+  }
+  body main .section--rated div {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+  }
+  body main .section--rated .div--rated2 {
+    margin-left: 10%;
+  }
+  body main .section--rated .div--rated3 {
+    margin-left: 20%;
+  }
+  body main .section--user-comments {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  body main .section--user-comments > div {
+    line-height: 30px;
+    font-size: 1.3rem;
+    height: 270px;
+  }
+  body main .section--user-comments div:nth-child(2) {
+    margin-top: 2.5%;
+  }
+  body main .section--user-comments div:nth-child(3) {
+    margin-top: 5%;
+  }
+  body main .div--pattern-up {
+    display: block;
+    width: 50%;
+    height: 300px;
+    background-image: url("../images/bg-pattern-top-desktop.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  body main .div--pattern-dow {
+    display: block;
+    width: 100%;
+    height: 80%;
+    background-image: url("../images/bg-pattern-bottom-desktop.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}/*# sourceMappingURL=main.css.map */

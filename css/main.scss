@@ -1,0 +1,299 @@
+//# Front-end Style Guide
+
+//## Layout
+
+//The designs were created to the following widths:
+
+//- Mobile: 375px
+//- Desktop: 1440px
+
+//## Colors
+
+//### Primary
+
+$Very_Dark_Magenta: hsl(300, 43%, 22%);
+$Soft_Pink: hsl(333, 80%, 67%);
+
+//### Neutral
+
+$Dark_Grayish_Magenta: hsl(303, 10%, 53%);
+$Light_Grayish_Magenta: hsl(300, 24%, 96%);
+$White: hsl(0, 0%, 100%);
+
+//## Typography
+
+//### Body Copy
+
+$Font_size: 1.5rem;
+
+//### Font
+$font-family_league: "League Spartan", sans-serif;
+//- Family: [League Spartan](https://fonts.google.com/specimen/League+Spartan)
+//- Weights: 400, 500, 700
+
+@mixin display(
+  $type: $Font-size,
+  $direction,
+  $j-content: null,
+  $a-items: null,
+  $gap: null
+) {
+  display: $type;
+  flex-direction: $direction;
+  justify-content: $j-content;
+  align-items: $a-items;
+  gap: $gap;
+}
+
+@mixin text($size, $weight, $family: $font-family_league, $color: black) {
+  font-size: $size;
+  font-weight: $weight;
+  font-family: $font-family_league;
+  color: $color;
+}
+@mixin icons($display, $width, $height, $url, $position-bg, $repeat-bg) {
+  display: $display;
+  width: $width;
+  height: $height;
+  background-image: url($url);
+  background-position: $position-bg;
+  background-repeat: $repeat-bg;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: $White;
+  main {
+    @include display(flex, column);
+    padding: 70px 30px;
+    gap: 30px;
+    min-width: 300px;
+    max-width: 500px;
+    margin: auto;
+    position: relative;
+    section {
+      @include display(flex, column);
+    }
+    .sectio--user-love-products {
+      h1 {
+        @include text(4rem, 700, null, $Very_Dark_Magenta);
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      p {
+        @include text(1.6rem, 400, null, $Very_Dark_Magenta);
+        text-align: center;
+        line-height: 25px;
+      }
+    }
+    .section--rated {
+      @include display(flex, column, null, null, 20px);
+      text-align: center;
+      div {
+        background-color: $Light_Grayish_Magenta;
+        border-radius: 5px;
+        @include text(1.5rem, 700, null, $Very_Dark_Magenta);
+        @include display(flex, column, center, center, 0px);
+        padding: 20px 0px;
+        span {
+          @include icons(
+            block,
+            100px,
+            15px,
+            "../images/icon-star.svg",
+            center,
+            space
+          );
+        }
+      }
+    }
+    .section--user-comments {
+      @include display(flex, column, null, null, 15px);
+      div {
+        background-color: $Very_Dark_Magenta;
+        width: 100%;
+        padding: 30px;
+        border-radius: 5px;
+        @include text(1.6rem, 400, null, $White);
+        line-height: 20px;
+        .ico-user1 {
+          @include display(flex, row, start, null, 20px);
+          padding: 0px;
+          margin-bottom: 10px;
+          & span:nth-child(1) {
+            @include icons(
+              block,
+              50px,
+              50px,
+              "../images/image-colton.jpg",
+              center,
+              space
+            );
+            background-size: contain;
+            border-radius: 50%;
+          }
+          p {
+            @include text(1.5rem, 700, null, $White);
+            span {
+              display: block;
+              @include text(1.5rem, 400, null, $Soft_Pink);
+              margin-top: 0px;
+            }
+          }
+        }
+        .ico-user2 {
+          @extend .ico-user1;
+          & span:nth-child(1) {
+            @include icons(
+              block,
+              50px,
+              50px,
+              "../images/image-irene.jpg",
+              center,
+              space
+            );
+            background-size: contain;
+            border-radius: 50%;
+          }
+        }
+        .ico-user3 {
+          @extend .ico-user1;
+          & span:nth-child(1) {
+            @include icons(
+              block,
+              50px,
+              50px,
+              "../images/image-anne.jpg",
+              center,
+              space
+            );
+            background-size: contain;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+    .div--pattern-up {
+      @include icons(
+        block,
+        70%,
+        150px,
+        "../images/bg-pattern-top-mobile.svg",
+        center,
+        null
+      );
+
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .div--pattern-dow {
+      @include icons(
+        block,
+        40%,
+        150px,
+        "../images/bg-pattern-bottom-mobile.svg",
+        center,
+        null
+      );
+
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
+@media (min-width: 1440px) {
+  html {
+    font-size: 120%;
+  }
+  body {
+    main {
+      max-width: none;
+      width: 95%;
+      padding: 100px 150px;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      margin: auto;
+      gap: 80px 30px;
+      .sectio--user-love-products {
+        width: 80%;
+        h1 {
+          text-align: left;
+          width: 500px;
+        }
+        p {
+          text-align: left;
+          font-size: 1.3rem;
+          line-height: 30px;
+        }
+      }
+      .section--rated {
+        div {
+          width: 70%;
+          @include display(flex, row, center, center, 10px);
+          font-weight: 500;
+        }
+        .div--rated2 {
+          margin-left: 10%;
+        }
+        .div--rated3 {
+          margin-left: 20%;
+        }
+      }
+      .section--user-comments {
+        @include display(flex, row, center, center, 50px);
+        grid-column-start: 1;
+        grid-column-end: 3;
+        &>div{
+            line-height: 30px;
+            font-size: 1.3rem;
+            height: 270px;
+        }
+        div:nth-child(2){
+margin-top: 2.5%
+        }
+        div:nth-child(3){
+            margin-top: 5%
+                    }
+      }
+      .div--pattern-up {
+        @include icons(
+          block,
+          50%,
+          300px,
+          "../images/bg-pattern-top-desktop.svg",
+          center,
+          null
+        );
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .div--pattern-dow {
+        @include icons(
+          block,
+          100%,
+          80%,
+          "../images/bg-pattern-bottom-desktop.svg",
+          center,
+          null
+        );
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+}
